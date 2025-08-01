@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Http name="AlertaHttpAppender" url="http://localhost:8080/api/alert" method="POST">
+            <Headers>
+                <Property name="Content-Type">application/json</Property>
+            </Headers>
+            <PatternLayout pattern="%msg%n" />
+        </Http>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="AlertaHttpAppender" />
+        </Root>
+    </Loggers>
+
+</Configuration>
